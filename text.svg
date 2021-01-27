@@ -1,7 +1,7 @@
 <svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
 	<foreignObject width="100%" height="100%">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<style>a {color: white; font-family: "Arial", sans-serif; text-decoration: none; border-radius: 2%; background-color: gray; animation: in 0.50s ease-out;}  @keyframes in {from {} to {background-color: black; border-radius: 5%;}}</style>
+			<style>a {color: white; padding-left: 10px; padding-right: 10px; font-family: "Arial", sans-serif; text-decoration: none; border-radius: 2%; background-color: gray; animation: in 0.50s ease-out;}  @keyframes in {from {padding-left: 0px; padding-right: 0px;} to {background-color: black; border-radius: 5%; padding-left: 10px; padding-right: 10px;}}</style>
 			<center><a href="https://github.com/AcaiBerii/BootJect/releases/tag/1.0">Latest Release > https://github.com/AcaiBerii/BootJect/releases/tag/1.0</a></center>
 		</div>
 	</foreignObject>
