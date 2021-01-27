@@ -33,6 +33,7 @@ namespace BootJect
             this.div = new System.Windows.Forms.Label();
             this.x = new System.Windows.Forms.Label();
             this.Open = new System.Windows.Forms.Label();
+            this.procname = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // title
@@ -58,7 +59,7 @@ namespace BootJect
             // 
             this.x.AutoSize = true;
             this.x.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.x.Location = new System.Drawing.Point(224, 21);
+            this.x.Location = new System.Drawing.Point(233, 21);
             this.x.Name = "x";
             this.x.Size = new System.Drawing.Size(26, 25);
             this.x.TabIndex = 2;
@@ -76,12 +77,23 @@ namespace BootJect
             this.Open.Text = "Inject";
             this.Open.Click += new System.EventHandler(this.In);
             // 
+            // procname
+            // 
+            this.procname.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.procname.ForeColor = System.Drawing.SystemColors.Menu;
+            this.procname.Location = new System.Drawing.Point(19, 82);
+            this.procname.Name = "procname";
+            this.procname.Size = new System.Drawing.Size(159, 20);
+            this.procname.TabIndex = 6;
+            this.procname.Text = "Name";
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(261, 102);
+            this.ClientSize = new System.Drawing.Size(270, 116);
+            this.Controls.Add(this.procname);
             this.Controls.Add(this.Open);
             this.Controls.Add(this.x);
             this.Controls.Add(this.div);
@@ -103,6 +115,7 @@ namespace BootJect
         private System.Windows.Forms.Label div;
         private System.Windows.Forms.Label x;
         private System.Windows.Forms.Label Open;
+        private System.Windows.Forms.TextBox procname;
     }
 }
 

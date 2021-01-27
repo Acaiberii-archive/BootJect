@@ -41,18 +41,18 @@ namespace BootJect
                         Process[] proclist = Process.GetProcesses();
                         foreach (Process pr in proclist)
                         {
-                            if (pr.ProcessName.StartsWith("Minecraft"))
+                            if (pr.ProcessName.StartsWith(procname.Text))
                             {
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
-                                MessageBox.Show("DLL has been injected into Minecraft (using AutoConfig)", "BootJect", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("DLL has been injected.", "BootJect", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }
-                    catch
+                    catch (Exception er)
                     {
-                        MessageBox.Show("An unexpected error occurred while injecting your dll, " + open.FileName + ". Try opening an issue on the BootJect GitHub page.", "Woag x1!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("An error occurred while injecting your dll, " + fileName + ". Try opening an issue on the BootJect GitHub page and report the log:" + er + ".", "Woag x1!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -60,9 +60,9 @@ namespace BootJect
                     MessageBox.Show("You didn't select an item from the dialog. Select a valid .dll file and try again!", "Woag x0!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch
+            catch (Exception er)
             {
-                MessageBox.Show("An unexpected, critical error occured. Please open an error on our GitHub page IMMEDIATELY.", "Woag x2!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An unexpected, critical error occured. Please open an error on our GitHub page and report the log: " + er, "Woag x2!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
