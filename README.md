@@ -4,4 +4,4 @@
 <div align="center">Automatically selects a program based on your input! Supports both x32 and x64.</div>
 
 
-Uses Reloaded.Injector for dll handling and memory injecting, process handling is coded from scratch!
+<div align="center">Uses Reloaded.Injector for dll handling and memory injecting, process handling is coded from scratch!</div>
