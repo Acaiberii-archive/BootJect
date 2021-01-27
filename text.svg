@@ -1,0 +1,8 @@
+<svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+	<foreignObject width="100%" height="100%">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<style>a {color: white; font-family: "Arial", sans-serif; text-decoration: none; animation: out 0.50s ease-out;} a:hover {animation: in 0.50s ease-in; border-radius: 20%; background-color: gray;} @keyframes in {0% {border-radius: 0%; background-color: transparent;} 100% {background-color: gray; border-radius: 20%;}} @keyframes out {0% {background-color: gray; border-radius: 20%;} 100% {background-color: transparent; border-radius: 0%;}}</style>
+			<center><a href="https://github.com/AcaiBerii/BootJect/releases/tag/1.0">Latest Release</a></center>
+		</div>
+	</foreignObject>
+</svg>
