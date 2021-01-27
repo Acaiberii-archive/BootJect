@@ -1,4 +1,4 @@
-<div align="center"><img src="help.png"></div>
+<div align="center"><img src="logo.png"></div>
 
 <div align="center">The best injector that is safe for your computer. Coded in C# .NET (with Windows Forms).</div>
 <div align="center">Automatically selects a program based on your input! Supports both x32 and x64.</div>
