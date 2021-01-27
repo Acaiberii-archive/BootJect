@@ -1,4 +1,4 @@
-# BootJect
+# The Almighty BootJector
 ![logo](https://github.com/AcaiBerii/BootJect/blob/master/help.png?raw=true)
 
 
