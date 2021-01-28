@@ -88,12 +88,20 @@ namespace BootJect
                             string exeFileName = Assembly.GetExecutingAssembly().CodeBase.Replace("file:///", string.Empty).Replace("/", "\\");
                             Console.WriteLine("[I] NoTrace on, this will delete the program. Goodbye!");
                             batchCommands += "@ECHO OFF\n";                         
-                            batchCommands += "ping 127.0.0.1 > nul\n";           
+                            batchCommands += "ping 127.0.0.1 > nul -n 3\n";           
                             batchCommands += "echo j | del /F ";                    
                             batchCommands += exeFileName + "\n";
                             batchCommands += "echo j | del ad.bat";
                             File.WriteAllText("ad.bat", batchCommands);
                             Process.Start("ad.bat");
+                            foreach (string f in System.IO.Directory.GetFiles(System.Reflection.Assembly.GetEntryAssembly().Location, "*.xml"))
+                            {
+                                System.IO.File.Delete(f);
+                            }
+                            foreach (string f in System.IO.Directory.GetFiles(System.Reflection.Assembly.GetEntryAssembly().Location, "*.dll"))
+                            {
+                                System.IO.File.Delete(f);
+                            }
                             Application.Exit();
                         }
                     }
