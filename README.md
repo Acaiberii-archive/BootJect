@@ -5,3 +5,4 @@
 
 
 <div align="center">Uses Reloaded.Injector for dll handling and memory injecting, process handling is coded from scratch!</div>
+<div align="center">Disposes injector process to remain hidden from anticheats.</div>
