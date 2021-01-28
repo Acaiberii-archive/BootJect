@@ -80,6 +80,7 @@ namespace BootJect
                         }
                         if (autoexit.Checked == true)
                         {
+                            Console.WriteLine("AutoExit toggled on, shutting down program. Goodbye!");
                             Application.Exit();
                         }
                     }
