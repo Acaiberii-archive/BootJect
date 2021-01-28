@@ -41,13 +41,46 @@ namespace BootJect
                         Process[] proclist = Process.GetProcesses();
                         foreach (Process pr in proclist)
                         {
-                            if (pr.ProcessName.StartsWith(procname.Text))
+                            if (pr.ProcessName.StartsWith(procname.Text.ToLower()))
                             {
+                                // Code for converting string to lowercase above (^)
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
-                                MessageBox.Show("DLL has been injected.", "BootJect", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
+                            else if (pr.ProcessName.StartsWith(procname.Text.ToUpper()))
+                            {
+                                // Code for converting string to uppercase above (^)
+                                Injector inj = new Injector(pr);
+                                inj.Inject(fullPath);
+                                inj.Dispose();
+                                MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else if (pr.ProcessName.StartsWith(procname.Text))
+                            {
+                                // Code for detecting regular name above (^)
+                                Injector inj = new Injector(pr);
+                                inj.Inject(fullPath);
+                                inj.Dispose();
+                                MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else if (pr.ProcessName.StartsWith(procname.Text.First().ToString().ToUpper() + procname.Text.Substring(1)))
+                            {
+                                // Code for converting first letter to uppercase above (^)
+                                Injector inj = new Injector(pr);
+                                inj.Inject(fullPath);
+                                inj.Dispose();
+                                MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                Console.WriteLine(pr.ToString() + " Skipped.");
+                            }
+                        }
+                        if (autoexit.Checked == true)
+                        {
+                            Application.Exit();
                         }
                     }
                     catch (Exception er)
@@ -65,38 +98,9 @@ namespace BootJect
                 MessageBox.Show("An unexpected, critical error occurred. Please open an error on our GitHub page and report the log: " + er, "Woag x2!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void Ghost(object sender, EventArgs e)
-        {
-            if (gh.Checked == true)
-            {
-                Ghost(gh.Checked);
-            }
-            else
-            {
-                Application.Exit();
-            }
-        }
-
         private void main_Load(object sender, EventArgs e)
         {
 
-        }
-        private void Ghost(bool tosend)
-        {
-            Ghostto(tosend);
-        }
-        public void Ghostto(bool istrue)
-        {
-            if (istrue == true)
-            {
-                string location = System.Reflection.Assembly.GetEntryAssembly().Location;
-                string exec = System.IO.Path.GetDirectoryName(location);
-                Directory.Delete(exec, true);
-            }
-            else
-            {
-                return;
-            }
         }
     }
 }
