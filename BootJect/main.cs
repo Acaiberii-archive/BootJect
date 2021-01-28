@@ -62,13 +62,41 @@ namespace BootJect
             }
             catch (Exception er)
             {
-                MessageBox.Show("An unexpected, critical error occured. Please open an error on our GitHub page and report the log: " + er, "Woag x2!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An unexpected, critical error occurred. Please open an error on our GitHub page and report the log: " + er, "Woag x2!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void Ghost(object sender, EventArgs e)
+        {
+            if (gh.Checked == true)
+            {
+                Ghost(gh.Checked);
+            }
+            else
+            {
+                Application.Exit();
             }
         }
 
         private void main_Load(object sender, EventArgs e)
         {
 
+        }
+        private void Ghost(bool tosend)
+        {
+            Ghostto(tosend);
+        }
+        public void Ghostto(bool istrue)
+        {
+            if (istrue == true)
+            {
+                string location = System.Reflection.Assembly.GetEntryAssembly().Location;
+                string exec = System.IO.Path.GetDirectoryName(location);
+                Directory.Delete(exec, true);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

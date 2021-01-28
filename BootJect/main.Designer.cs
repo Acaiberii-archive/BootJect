@@ -34,6 +34,7 @@ namespace BootJect
             this.x = new System.Windows.Forms.Label();
             this.Open = new System.Windows.Forms.Label();
             this.procname = new System.Windows.Forms.TextBox();
+            this.gh = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // title
@@ -87,12 +88,23 @@ namespace BootJect
             this.procname.TabIndex = 6;
             this.procname.Text = "Name";
             // 
+            // gh
+            // 
+            this.gh.AutoSize = true;
+            this.gh.Location = new System.Drawing.Point(19, 108);
+            this.gh.Name = "gh";
+            this.gh.Size = new System.Drawing.Size(54, 17);
+            this.gh.TabIndex = 7;
+            this.gh.Text = "Ghost";
+            this.gh.UseVisualStyleBackColor = true;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(270, 116);
+            this.ClientSize = new System.Drawing.Size(270, 140);
+            this.Controls.Add(this.gh);
             this.Controls.Add(this.procname);
             this.Controls.Add(this.Open);
             this.Controls.Add(this.x);
@@ -116,6 +128,7 @@ namespace BootJect
         private System.Windows.Forms.Label x;
         private System.Windows.Forms.Label Open;
         private System.Windows.Forms.TextBox procname;
+        private System.Windows.Forms.CheckBox gh;
     }
 }
 
