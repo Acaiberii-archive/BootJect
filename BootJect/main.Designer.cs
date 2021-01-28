@@ -95,7 +95,7 @@ namespace BootJect
             this.autoexit.Name = "autoexit";
             this.autoexit.Size = new System.Drawing.Size(68, 17);
             this.autoexit.TabIndex = 7;
-            this.autoexit.Text = "Auto Exit";
+            this.autoexit.Text = "NoTrace";
             this.autoexit.UseVisualStyleBackColor = true;
             // 
             // main

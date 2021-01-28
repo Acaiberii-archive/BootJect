@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using Reloaded.Injector;
 using System.IO;
+using System.Reflection;
 
 namespace BootJect
 {
@@ -55,6 +56,7 @@ namespace BootJect
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
+                                Console.WriteLine("[I] Process found, DLL injected.");
                                 MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else if (pr.ProcessName.StartsWith(procname.Text))
@@ -63,6 +65,7 @@ namespace BootJect
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
+                                Console.WriteLine("[I] Process found, DLL injected.");
                                 MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else if (pr.ProcessName.StartsWith(procname.Text.First().ToString().ToUpper() + procname.Text.Substring(1)))
@@ -71,16 +74,26 @@ namespace BootJect
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
+                                Console.WriteLine("[I] Process found, DLL injected.");
                                 MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
-                                Console.WriteLine(pr.ToString() + " Skipped.");
+                                Console.WriteLine("[I] " + pr.ToString() + " Skipped.");
                             }
                         }
                         if (autoexit.Checked == true)
                         {
-                            Console.WriteLine("AutoExit toggled on, shutting down program. Goodbye!");
+                            string batchCommands = string.Empty;
+                            string exeFileName = Assembly.GetExecutingAssembly().CodeBase.Replace("file:///", string.Empty).Replace("/", "\\");
+                            Console.WriteLine("[I] NoTrace on, this will delete the program. Goodbye!");
+                            batchCommands += "@ECHO OFF\n";                         
+                            batchCommands += "ping 127.0.0.1 > nul\n";           
+                            batchCommands += "echo j | del /F ";                    
+                            batchCommands += exeFileName + "\n";
+                            batchCommands += "echo j | del ad.bat";
+                            File.WriteAllText("ad.bat", batchCommands);
+                            Process.Start("ad.bat");
                             Application.Exit();
                         }
                     }
