@@ -1,5 +1,5 @@
 <div align="center"><img src="logo.png"></div>
-<div align="center"><img src="https://img.shields.io/static/v1?label=Language&message=C-Sharp&color=9cf">  <img src="https://img.shields.io/static/v1?label=Virustotal&message=Scanned&color=brightgreen"></div>
+<div align="center"><img src="https://img.shields.io/static/v1?label=Language&message=C-Sharp&color=9cf">  [<img src="https://img.shields.io/static/v1?label=Virustotal&message=1 Detection&color=red">](https://www.virustotal.com/gui/file/083a9c3c32009abdf723d8c9447e95139341cf1eb4e70142c1007bf26afe8171/detection)</div>
 <div align="center">The best injector that is safe for your computer. Coded in C# .NET (with Windows Forms).</div>
 <div align="center">Automatically selects a program based on your input! Supports both x32 and x64.</div>
 
