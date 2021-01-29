@@ -30,11 +30,11 @@ namespace BootJect
         private void InitializeComponent()
         {
             this.title = new System.Windows.Forms.Label();
-            this.div = new System.Windows.Forms.Label();
             this.x = new System.Windows.Forms.Label();
             this.Open = new System.Windows.Forms.Label();
             this.procname = new System.Windows.Forms.TextBox();
             this.autoexit = new System.Windows.Forms.CheckBox();
+            this.procpt = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // title
@@ -47,20 +47,11 @@ namespace BootJect
             this.title.TabIndex = 0;
             this.title.Text = "bootject";
             // 
-            // div
-            // 
-            this.div.AutoSize = true;
-            this.div.Location = new System.Drawing.Point(157, 21);
-            this.div.Name = "div";
-            this.div.Size = new System.Drawing.Size(61, 13);
-            this.div.TabIndex = 1;
-            this.div.Text = "_________";
-            // 
             // x
             // 
             this.x.AutoSize = true;
             this.x.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.x.Location = new System.Drawing.Point(233, 21);
+            this.x.Location = new System.Drawing.Point(617, 21);
             this.x.Name = "x";
             this.x.Size = new System.Drawing.Size(26, 25);
             this.x.TabIndex = 2;
@@ -98,17 +89,28 @@ namespace BootJect
             this.autoexit.Text = "NoTrace";
             this.autoexit.UseVisualStyleBackColor = true;
             // 
+            // procpt
+            // 
+            this.procpt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.procpt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.procpt.ForeColor = System.Drawing.SystemColors.Window;
+            this.procpt.Location = new System.Drawing.Point(19, 142);
+            this.procpt.Name = "procpt";
+            this.procpt.Size = new System.Drawing.Size(624, 117);
+            this.procpt.TabIndex = 8;
+            this.procpt.Text = "";
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(270, 140);
+            this.ClientSize = new System.Drawing.Size(655, 271);
+            this.Controls.Add(this.procpt);
             this.Controls.Add(this.autoexit);
             this.Controls.Add(this.procname);
             this.Controls.Add(this.Open);
             this.Controls.Add(this.x);
-            this.Controls.Add(this.div);
             this.Controls.Add(this.title);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -124,11 +126,11 @@ namespace BootJect
         #endregion
 
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Label div;
         private System.Windows.Forms.Label x;
         private System.Windows.Forms.Label Open;
         private System.Windows.Forms.TextBox procname;
         private System.Windows.Forms.CheckBox autoexit;
+        private System.Windows.Forms.RichTextBox procpt;
     }
 }
 

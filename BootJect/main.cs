@@ -42,9 +42,12 @@ namespace BootJect
                         Process[] proclist = Process.GetProcesses();
                         foreach (Process pr in proclist)
                         {
+                            
                             if (pr.ProcessName.StartsWith(procname.Text.ToLower()))
                             {
                                 // Code for converting string to lowercase above (^)
+                                string procpath = pr.MainModule.FileName;
+                                procpt.Text = "[I] Injecting to:" + procpath;
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
@@ -53,6 +56,8 @@ namespace BootJect
                             else if (pr.ProcessName.StartsWith(procname.Text.ToUpper()))
                             {
                                 // Code for converting string to uppercase above (^)
+                                string procpath = pr.MainModule.FileName;
+                                procpt.Text = "[I] Injecting to:" + procpath;
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
@@ -62,6 +67,8 @@ namespace BootJect
                             else if (pr.ProcessName.StartsWith(procname.Text))
                             {
                                 // Code for detecting regular name above (^)
+                                string procpath = pr.MainModule.FileName;
+                                procpt.Text = "[I] Injecting to:" + procpath;
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
@@ -71,6 +78,8 @@ namespace BootJect
                             else if (pr.ProcessName.StartsWith(procname.Text.First().ToString().ToUpper() + procname.Text.Substring(1)))
                             {
                                 // Code for converting first letter to uppercase above (^)
+                                string procpath = pr.MainModule.FileName;
+                                procpt.Text = "[I] Injecting to:" +procpath;
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
