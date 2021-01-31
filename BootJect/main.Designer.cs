@@ -35,6 +35,7 @@ namespace BootJect
             this.procname = new System.Windows.Forms.TextBox();
             this.autoexit = new System.Windows.Forms.CheckBox();
             this.procpt = new System.Windows.Forms.RichTextBox();
+            this.load = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // title
@@ -100,12 +101,21 @@ namespace BootJect
             this.procpt.TabIndex = 8;
             this.procpt.Text = "";
             // 
+            // load
+            // 
+            this.load.AutoSize = true;
+            this.load.Location = new System.Drawing.Point(158, 21);
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(0, 13);
+            this.load.TabIndex = 9;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(655, 271);
+            this.Controls.Add(this.load);
             this.Controls.Add(this.procpt);
             this.Controls.Add(this.autoexit);
             this.Controls.Add(this.procname);
@@ -131,6 +141,7 @@ namespace BootJect
         private System.Windows.Forms.TextBox procname;
         private System.Windows.Forms.CheckBox autoexit;
         private System.Windows.Forms.RichTextBox procpt;
+        private System.Windows.Forms.Label load;
     }
 }
 
