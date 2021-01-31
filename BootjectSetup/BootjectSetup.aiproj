@@ -13,12 +13,10 @@
     <AssemblyName>BootjectSetup</AssemblyName>
     <Name>BootjectSetup</Name>
     <RootNamespace>BootjectSetup</RootNamespace>
-    <LoadFromTemplate>True</LoadFromTemplate>
+    <LoadFromTemplate>
+    </LoadFromTemplate>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'All' ">
-    <DebugSymbols>false</DebugSymbols>
-    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
-  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DefaultBuild' " />
   <ItemGroup>
     <Compile Include="BootjectSetup.aip">
       <SubType>Code</SubType>
