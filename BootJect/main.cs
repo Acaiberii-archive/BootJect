@@ -11,6 +11,7 @@ using System.Diagnostics;
 using Reloaded.Injector;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 
 namespace BootJect
 {
@@ -26,6 +27,7 @@ namespace BootJect
         }
         private void In(object sender, EventArgs e)
         {
+            
             try
             {
                 OpenFileDialog open = new OpenFileDialog();
@@ -126,7 +128,7 @@ namespace BootJect
                 }
                 else
                 {
-                    MessageBox.Show("You didn't select an item from the dialog. Select a valid .dll file and try again!", "Woag x0!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("You didn't select an item from the dialog. Select a valid .dll file and try again!", "Woag x1!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception er)
@@ -136,7 +138,7 @@ namespace BootJect
         }
         private void main_Load(object sender, EventArgs e)
         {
-
+          
         }
     }
 }
