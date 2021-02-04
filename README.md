@@ -9,3 +9,4 @@
 <div align="center">Disposes injector process to remain hidden from anticheats.</div>
 <h1></h1>
 <div align="center"><h1>Changelog:</h1></div>
+<div align="center">- Added "ALL APPLICATION PACKAGES" permission to fix bugs with application access.</div>
