@@ -12,6 +12,7 @@ using Reloaded.Injector;
 using System.IO;
 using System.Reflection;
 using System.Threading;
+using System.Security.AccessControl;
 
 namespace BootJect
 {
@@ -50,6 +51,7 @@ namespace BootJect
                             {
                                 // Code for converting string to lowercase above (^)
                                 string procpath = pr.MainModule.FileName;
+                                VibeCheck(fullPath);
                                 procpt.Text = "[I] Injecting to:" + procpath;
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
@@ -61,6 +63,7 @@ namespace BootJect
                             {
                                 // Code for converting string to uppercase above (^)
                                 string procpath = pr.MainModule.FileName;
+                                VibeCheck(fullPath);
                                 procpt.Text = "[I] Injecting to:" + procpath;
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
@@ -73,6 +76,7 @@ namespace BootJect
                             {
                                 // Code for detecting regular name above (^)
                                 string procpath = pr.MainModule.FileName;
+                                VibeCheck(fullPath);
                                 procpt.Text = "[I] Injecting to:" + procpath;
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
@@ -85,6 +89,7 @@ namespace BootJect
                             {
                                 // Code for converting first letter to uppercase above (^)
                                 string procpath = pr.MainModule.FileName;
+                                VibeCheck(fullPath);
                                 procpt.Text = "[I] Injecting to:" +procpath;
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
@@ -139,6 +144,13 @@ namespace BootJect
         private void main_Load(object sender, EventArgs e)
         {
           
+        }
+        private void VibeCheck(string path)
+        {
+            FileInfo f = new FileInfo(path);
+            System.Security.AccessControl.FileSecurity fileSecurity = f.GetAccessControl();
+            fileSecurity.AddAccessRule(new FileSystemAccessRule("ALL APPLICATION PACKAGES", FileSystemRights.FullControl, AccessControlType.Allow));
+            f.SetAccessControl(fileSecurity);
         }
     }
 }
