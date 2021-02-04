@@ -143,14 +143,25 @@ namespace BootJect
         }
         private void main_Load(object sender, EventArgs e)
         {
-          
+            Console.WriteLine("[I] Main loaded");
         }
         private void VibeCheck(string path)
         {
+            Console.WriteLine("[I] Preparing to vibe...");
             FileInfo f = new FileInfo(path);
             System.Security.AccessControl.FileSecurity fileSecurity = f.GetAccessControl();
+            Console.WriteLine("[I] Vibing...");
             fileSecurity.AddAccessRule(new FileSystemAccessRule("ALL APPLICATION PACKAGES", FileSystemRights.FullControl, AccessControlType.Allow));
-            f.SetAccessControl(fileSecurity);
+            try
+            {
+                f.SetAccessControl(fileSecurity);
+                Console.WriteLine("[I] We do vibe with the DLL: " + path);
+                
+            }
+            catch
+            {
+                Console.WriteLine("[!] We do not vibe with the DLL: " + path);
+            }
         }
     }
 }
