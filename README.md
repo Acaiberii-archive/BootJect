@@ -10,3 +10,4 @@
 <h1></h1>
 <div align="center"><h1>Changelog:</h1></div>
 <div align="center">- Added "ALL APPLICATION PACKAGES" permission to fix bugs with application access.</div>
+<div align="center">- Added support for x32 based devices (BETA)</div>
