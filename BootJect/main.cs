@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using System.Diagnostics;
 using Reloaded.Injector;
@@ -13,6 +14,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Security.AccessControl;
+using System.Runtime.InteropServices;
 
 namespace BootJect
 {
@@ -25,6 +27,10 @@ namespace BootJect
         private void Close(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void Min(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
         }
         private void In(object sender, EventArgs e)
         {
@@ -155,12 +161,13 @@ namespace BootJect
             try
             {
                 f.SetAccessControl(fileSecurity);
-                Console.WriteLine("[I] We do vibe with the DLL: " + path);
+                Console.WriteLine("[I] Vibe completed. UWP apps are compatible with the DLL: " + path);
                 
             }
-            catch
+            catch (Exception er)
             {
-                Console.WriteLine("[!] We do not vibe with the DLL: " + path);
+                Console.WriteLine("[!] Vibe error. UWP apps will not be compatible with the DLL: " + path);
+                MessageBox.Show("An unexpected, critical error occurred. Please open an error on our GitHub page and report the log: " + er, "Woag x2!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
