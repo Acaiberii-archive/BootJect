@@ -147,7 +147,7 @@ namespace BootJect
         }
         private void VibeCheck(string path)
         {
-            Console.WriteLine("[I] Preparing to vibe...");
+            Console.WriteLine("[I] Preparing to vibe (giving file access to UWP applications)...");
             FileInfo f = new FileInfo(path);
             System.Security.AccessControl.FileSecurity fileSecurity = f.GetAccessControl();
             Console.WriteLine("[I] Vibing...");
