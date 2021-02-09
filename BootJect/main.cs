@@ -26,6 +26,7 @@ namespace BootJect
         public int sizey;
         public int posx;
         public int posy;
+        public int border = 50;
         public main()
         {
             SetStyle(ControlStyles.UserPaint, true);
@@ -179,6 +180,8 @@ namespace BootJect
         }
         private void main_Load(object sender, EventArgs e)
         {
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, border, border));
+            this.Update();
             this.Width = 0;
             this.Height = 0;
             this.Opacity = 0.0;
@@ -250,13 +253,15 @@ namespace BootJect
         {
             if (this.Opacity > 0.0)
             {
-                sizex -= 40;
+                sizex -= 33;
                 sizey -= 20;
                 posy -= 40;
+                border += 1;
                 this.Opacity -= 0.050;
                 this.Width = sizex;
                 this.Height = sizey;
-                this.Location = new Point(posx, posy);
+                Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, border, border));
+                this.Update();
             }
             else
             {
@@ -271,13 +276,15 @@ namespace BootJect
             {
                 if (this.Opacity < 1.0)
                 {
-                    sizex += 40;
+                    sizex += 33;
                     sizey += 20;
                     posy += 40;
+                    border -= 2;
                     this.Opacity += 0.050;
                     this.Width = sizex;
                     this.Height = sizey;
-                    this.Location = new Point(posx, posy);
+                    Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, border, border));
+                    this.Update();
                 }
                 else
                 {
