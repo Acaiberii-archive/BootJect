@@ -133,19 +133,19 @@ namespace BootJect
             this.exitToolStripMenuItem,
             this.minimizeToolStripMenuItem});
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(181, 70);
+            this.menu.Size = new System.Drawing.Size(124, 48);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.Close);
             // 
             // minimizeToolStripMenuItem
             // 
             this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
-            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.minimizeToolStripMenuItem.Text = "Minimize";
             this.minimizeToolStripMenuItem.Click += new System.EventHandler(this.Min);
             // 
@@ -172,6 +172,9 @@ namespace BootJect
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BootJect";
             this.Load += new System.EventHandler(this.main_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.main_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.main_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.main_MouseUp);
             this.menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

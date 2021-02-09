@@ -23,6 +23,8 @@ namespace BootJect
         public main()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
         }
         private void Close(object sender, EventArgs e)
         {
@@ -32,6 +34,18 @@ namespace BootJect
         {
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
         }
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse 
+        );
+
         private void In(object sender, EventArgs e)
         {
             
@@ -169,6 +183,30 @@ namespace BootJect
                 Console.WriteLine("[!] Vibe error. UWP apps will not be compatible with the DLL: " + path);
                 MessageBox.Show("An unexpected, critical error occurred. Please open an error on our GitHub page and report the log: " + er, "Woag x2!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private bool mouseDown;
+        private Point lastLocation;
+
+        private void main_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void main_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void main_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }
