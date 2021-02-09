@@ -23,8 +23,8 @@ namespace BootJect
         public main()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+            this.FormBorderStyle = FormBorderStyle.None;
         }
         private void Close(object sender, EventArgs e)
         {
@@ -46,6 +46,13 @@ namespace BootJect
             int nHeightEllipse 
         );
 
+        private void LoadFuny(object sender, EventArgs e)
+        {
+            string[] names = new string[] { "Banned lol", "sad", "BootJect", "Almighty boot", "hmmm" };
+            Random rnd = new Random();
+            int index = rnd.Next(names.Length);
+            Console.WriteLine($"Name: {names[index]}");
+        }
         private void In(object sender, EventArgs e)
         {
             
@@ -207,6 +214,17 @@ namespace BootJect
         private void main_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private const int CS_DROPSHADOW = 0x20000;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
         }
     }
 }

@@ -31,7 +31,6 @@ namespace BootJect
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
-            this.title = new System.Windows.Forms.Label();
             this.x = new System.Windows.Forms.Label();
             this.Open = new System.Windows.Forms.Label();
             this.procname = new System.Windows.Forms.TextBox();
@@ -42,18 +41,9 @@ namespace BootJect
             this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.funy = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(12, 9);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(139, 39);
-            this.title.TabIndex = 0;
-            this.title.Text = "bootject";
             // 
             // x
             // 
@@ -69,10 +59,10 @@ namespace BootJect
             // Open
             // 
             this.Open.AutoSize = true;
-            this.Open.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Open.Location = new System.Drawing.Point(13, 48);
+            this.Open.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Open.Location = new System.Drawing.Point(184, 71);
             this.Open.Name = "Open";
-            this.Open.Size = new System.Drawing.Size(80, 31);
+            this.Open.Size = new System.Drawing.Size(48, 20);
             this.Open.TabIndex = 5;
             this.Open.Text = "Inject";
             this.Open.Click += new System.EventHandler(this.In);
@@ -81,7 +71,7 @@ namespace BootJect
             // 
             this.procname.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.procname.ForeColor = System.Drawing.SystemColors.Menu;
-            this.procname.Location = new System.Drawing.Point(19, 82);
+            this.procname.Location = new System.Drawing.Point(19, 71);
             this.procname.Name = "procname";
             this.procname.Size = new System.Drawing.Size(159, 20);
             this.procname.TabIndex = 6;
@@ -90,7 +80,7 @@ namespace BootJect
             // autoexit
             // 
             this.autoexit.AutoSize = true;
-            this.autoexit.Location = new System.Drawing.Point(19, 108);
+            this.autoexit.Location = new System.Drawing.Point(19, 97);
             this.autoexit.Name = "autoexit";
             this.autoexit.Size = new System.Drawing.Size(68, 17);
             this.autoexit.TabIndex = 7;
@@ -102,9 +92,9 @@ namespace BootJect
             this.procpt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.procpt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.procpt.ForeColor = System.Drawing.SystemColors.Window;
-            this.procpt.Location = new System.Drawing.Point(19, 142);
+            this.procpt.Location = new System.Drawing.Point(19, 133);
             this.procpt.Name = "procpt";
-            this.procpt.Size = new System.Drawing.Size(624, 117);
+            this.procpt.Size = new System.Drawing.Size(624, 126);
             this.procpt.TabIndex = 8;
             this.procpt.Text = "";
             // 
@@ -120,7 +110,7 @@ namespace BootJect
             // 
             this.min.AutoSize = true;
             this.min.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.min.Location = new System.Drawing.Point(585, 9);
+            this.min.Location = new System.Drawing.Point(592, 9);
             this.min.Name = "min";
             this.min.Size = new System.Drawing.Size(19, 25);
             this.min.TabIndex = 10;
@@ -149,6 +139,16 @@ namespace BootJect
             this.minimizeToolStripMenuItem.Text = "Minimize";
             this.minimizeToolStripMenuItem.Click += new System.EventHandler(this.Min);
             // 
+            // funy
+            // 
+            this.funy.AutoSize = true;
+            this.funy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funy.Location = new System.Drawing.Point(15, 32);
+            this.funy.Name = "funy";
+            this.funy.Size = new System.Drawing.Size(137, 24);
+            this.funy.TabIndex = 11;
+            this.funy.Text = "loading a funy..";
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +156,7 @@ namespace BootJect
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(655, 271);
             this.ContextMenuStrip = this.menu;
+            this.Controls.Add(this.funy);
             this.Controls.Add(this.min);
             this.Controls.Add(this.load);
             this.Controls.Add(this.procpt);
@@ -163,7 +164,6 @@ namespace BootJect
             this.Controls.Add(this.procname);
             this.Controls.Add(this.Open);
             this.Controls.Add(this.x);
-            this.Controls.Add(this.title);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -182,8 +182,6 @@ namespace BootJect
         }
 
         #endregion
-
-        private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label x;
         private System.Windows.Forms.Label Open;
         private System.Windows.Forms.TextBox procname;
@@ -194,6 +192,7 @@ namespace BootJect
         private System.Windows.Forms.ContextMenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minimizeToolStripMenuItem;
+        private System.Windows.Forms.Label funy;
     }
 }
 
