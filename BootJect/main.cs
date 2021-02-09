@@ -256,11 +256,13 @@ namespace BootJect
                 sizex -= 33;
                 sizey -= 20;
                 posy -= 40;
+                posx += 12;
                 border += 1;
                 this.Opacity -= 0.050;
                 this.Width = sizex;
                 this.Height = sizey;
                 Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, border, border));
+                this.Location = new Point(posx, this.Location.Y);
                 this.Update();
             }
             else
