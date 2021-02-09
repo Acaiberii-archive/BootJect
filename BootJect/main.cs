@@ -22,6 +22,8 @@ namespace BootJect
 {
     public partial class main : Form
     {
+        public int sizex;
+        public int sizey;
         public main()
         {
             SetStyle(ControlStyles.UserPaint, true);
@@ -175,10 +177,14 @@ namespace BootJect
         }
         private void main_Load(object sender, EventArgs e)
         {
+            this.Width = 0;
+            this.Height = 0;
             this.Opacity = 0.0;
             Console.WriteLine("[I] Main loaded");
             LoadFuny();
             timer2.Start();
+            sizex = this.Width;
+            sizey = this.Height;
         }
         private void VibeCheck(string path)
         {
@@ -239,7 +245,11 @@ namespace BootJect
         {
             if (this.Opacity > 0.0)
             {
+                sizex -= 50;
+                sizey -= 50;
                 this.Opacity -= 0.050;
+                this.Width = sizex;
+                this.Height = sizey;
             }
             else
             {
@@ -254,7 +264,11 @@ namespace BootJect
             {
                 if (this.Opacity < 1.0)
                 {
+                    sizex += 50;
+                    sizey += 50;
                     this.Opacity += 0.050;
+                    this.Width = sizex;
+                    this.Height = sizey;
                 }
                 else
                 {
