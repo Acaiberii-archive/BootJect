@@ -43,6 +43,7 @@ namespace BootJect
             this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funy = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,9 +84,10 @@ namespace BootJect
             // 
             this.autoexit.AutoSize = true;
             this.autoexit.BackColor = System.Drawing.Color.Transparent;
+            this.autoexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.autoexit.Location = new System.Drawing.Point(16, 62);
             this.autoexit.Name = "autoexit";
-            this.autoexit.Size = new System.Drawing.Size(68, 17);
+            this.autoexit.Size = new System.Drawing.Size(65, 17);
             this.autoexit.TabIndex = 7;
             this.autoexit.Text = "NoTrace";
             this.autoexit.UseVisualStyleBackColor = false;
@@ -154,6 +156,14 @@ namespace BootJect
             this.funy.TabIndex = 11;
             this.funy.Text = "loading a funy..";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.Main_CloseAnim);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.Main_OpenAnim);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +210,7 @@ namespace BootJect
         private System.Windows.Forms.ToolStripMenuItem minimizeToolStripMenuItem;
         private System.Windows.Forms.Label funy;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

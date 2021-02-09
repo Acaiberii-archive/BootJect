@@ -33,7 +33,7 @@ namespace BootJect
         }
         private void Close(object sender, EventArgs e)
         {
-            Application.Exit();
+            timer1.Start();
         }
         private void Min(object sender, EventArgs e)
         {
@@ -175,8 +175,10 @@ namespace BootJect
         }
         private void main_Load(object sender, EventArgs e)
         {
+            this.Opacity = 0.0;
             Console.WriteLine("[I] Main loaded");
             LoadFuny();
+            timer2.Start();
         }
         private void VibeCheck(string path)
         {
@@ -230,6 +232,39 @@ namespace BootJect
                 CreateParams cp = base.CreateParams;
                 cp.ClassStyle |= CS_DROPSHADOW;
                 return cp;
+            }
+        }
+
+        public void Main_CloseAnim(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.050;
+            }
+            else
+            {
+                timer1.Stop();
+                Application.Exit();
+            }
+        }
+
+        public void Main_OpenAnim(object sender, EventArgs e)
+        {
+            if (this.Opacity >= 0.0)
+            {
+                if (this.Opacity < 1.0)
+                {
+                    this.Opacity += 0.050;
+                }
+                else
+                {
+                    this.Opacity = 1.0;
+                    timer2.Stop();
+                }
+            }
+            else
+            {
+                timer2.Stop();
             }
         }
     }
