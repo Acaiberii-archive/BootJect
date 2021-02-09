@@ -24,6 +24,8 @@ namespace BootJect
     {
         public int sizex;
         public int sizey;
+        public int posx;
+        public int posy;
         public main()
         {
             SetStyle(ControlStyles.UserPaint, true);
@@ -185,6 +187,7 @@ namespace BootJect
             timer2.Start();
             sizex = this.Width;
             sizey = this.Height;
+            posx = this.Left;
         }
         private void VibeCheck(string path)
         {
@@ -222,6 +225,8 @@ namespace BootJect
                     (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
 
                 this.Update();
+                posx = this.Left;
+                posy = this.Top;
             }
         }
 
@@ -245,11 +250,13 @@ namespace BootJect
         {
             if (this.Opacity > 0.0)
             {
-                sizex -= 50;
-                sizey -= 50;
+                sizex -= 40;
+                sizey -= 20;
+                posy -= 20;
                 this.Opacity -= 0.050;
                 this.Width = sizex;
                 this.Height = sizey;
+                this.Location = new Point(posx, posy);
             }
             else
             {
@@ -264,11 +271,13 @@ namespace BootJect
             {
                 if (this.Opacity < 1.0)
                 {
-                    sizex += 50;
-                    sizey += 50;
+                    sizex += 40;
+                    sizey += 20;
+                    posy += 20;
                     this.Opacity += 0.050;
                     this.Width = sizex;
                     this.Height = sizey;
+                    this.Location = new Point(posx, posy);
                 }
                 else
                 {
