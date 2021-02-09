@@ -252,7 +252,7 @@ namespace BootJect
             {
                 sizex -= 40;
                 sizey -= 20;
-                posy -= 20;
+                posy -= 40;
                 this.Opacity -= 0.050;
                 this.Width = sizex;
                 this.Height = sizey;
@@ -273,7 +273,7 @@ namespace BootJect
                 {
                     sizex += 40;
                     sizey += 20;
-                    posy += 20;
+                    posy += 40;
                     this.Opacity += 0.050;
                     this.Width = sizex;
                     this.Height = sizey;
