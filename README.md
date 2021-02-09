@@ -1,7 +1,7 @@
 <div align="center"><img src="logo.png"></div>
 <div align="center"><h2>The almighty BootJector -- DLL injection revamped.</h2></div>
 
-<div align="center"><img src="https://img.shields.io/static/v1?label=Virustotal&message=1 Detection&color=red">  <img src="https://img.shields.io/static/v1?label=Active&message=Yes&color=green"></div>
+<div align="center"><img src="https://img.shields.io/static/v1?label=Active&message=Yes&color=green"></div>
 <div align="center"><img src="https://forthebadge.com/images/badges/made-with-c-sharp.svg">  <img src="https://forthebadge.com/images/badges/powered-by-flux-capacitor.svg">  <img src="https://forthebadge.com/images/badges/does-not-contain-msg.svg"></div>
 <h1></h1>
 <div align="center">The best injector that is safe for your computer. Coded in C# .NET (with Windows Forms).</div>
