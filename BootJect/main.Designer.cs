@@ -42,14 +42,16 @@ namespace BootJect
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funy = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // x
             // 
             this.x.AutoSize = true;
+            this.x.BackColor = System.Drawing.Color.Transparent;
             this.x.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.x.Location = new System.Drawing.Point(617, 9);
+            this.x.Location = new System.Drawing.Point(617, 8);
             this.x.Name = "x";
             this.x.Size = new System.Drawing.Size(26, 25);
             this.x.TabIndex = 2;
@@ -60,7 +62,7 @@ namespace BootJect
             // 
             this.Open.AutoSize = true;
             this.Open.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Open.Location = new System.Drawing.Point(184, 71);
+            this.Open.Location = new System.Drawing.Point(181, 36);
             this.Open.Name = "Open";
             this.Open.Size = new System.Drawing.Size(48, 20);
             this.Open.TabIndex = 5;
@@ -71,7 +73,7 @@ namespace BootJect
             // 
             this.procname.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.procname.ForeColor = System.Drawing.SystemColors.Menu;
-            this.procname.Location = new System.Drawing.Point(19, 71);
+            this.procname.Location = new System.Drawing.Point(16, 36);
             this.procname.Name = "procname";
             this.procname.Size = new System.Drawing.Size(159, 20);
             this.procname.TabIndex = 6;
@@ -80,12 +82,13 @@ namespace BootJect
             // autoexit
             // 
             this.autoexit.AutoSize = true;
-            this.autoexit.Location = new System.Drawing.Point(19, 97);
+            this.autoexit.BackColor = System.Drawing.Color.Transparent;
+            this.autoexit.Location = new System.Drawing.Point(16, 62);
             this.autoexit.Name = "autoexit";
             this.autoexit.Size = new System.Drawing.Size(68, 17);
             this.autoexit.TabIndex = 7;
             this.autoexit.Text = "NoTrace";
-            this.autoexit.UseVisualStyleBackColor = true;
+            this.autoexit.UseVisualStyleBackColor = false;
             // 
             // procpt
             // 
@@ -109,8 +112,9 @@ namespace BootJect
             // min
             // 
             this.min.AutoSize = true;
+            this.min.BackColor = System.Drawing.Color.Transparent;
             this.min.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.min.Location = new System.Drawing.Point(592, 9);
+            this.min.Location = new System.Drawing.Point(592, 8);
             this.min.Name = "min";
             this.min.Size = new System.Drawing.Size(19, 25);
             this.min.TabIndex = 10;
@@ -142,8 +146,9 @@ namespace BootJect
             // funy
             // 
             this.funy.AutoSize = true;
+            this.funy.BackColor = System.Drawing.Color.Transparent;
             this.funy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.funy.Location = new System.Drawing.Point(15, 32);
+            this.funy.Location = new System.Drawing.Point(12, 9);
             this.funy.Name = "funy";
             this.funy.Size = new System.Drawing.Size(137, 24);
             this.funy.TabIndex = 11;
@@ -153,17 +158,17 @@ namespace BootJect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(655, 271);
             this.ContextMenuStrip = this.menu;
-            this.Controls.Add(this.funy);
             this.Controls.Add(this.min);
+            this.Controls.Add(this.procname);
+            this.Controls.Add(this.x);
+            this.Controls.Add(this.autoexit);
+            this.Controls.Add(this.funy);
             this.Controls.Add(this.load);
             this.Controls.Add(this.procpt);
-            this.Controls.Add(this.autoexit);
-            this.Controls.Add(this.procname);
             this.Controls.Add(this.Open);
-            this.Controls.Add(this.x);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -171,6 +176,7 @@ namespace BootJect
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BootJect";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.main_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.main_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.main_MouseMove);
@@ -193,6 +199,7 @@ namespace BootJect
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minimizeToolStripMenuItem;
         private System.Windows.Forms.Label funy;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

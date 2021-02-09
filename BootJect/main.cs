@@ -15,6 +15,8 @@ using System.Reflection;
 using System.Threading;
 using System.Security.AccessControl;
 using System.Runtime.InteropServices;
+using System.Drawing.Imaging;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BootJect
 {
@@ -22,8 +24,11 @@ namespace BootJect
     {
         public main()
         {
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 5, 5));
             this.FormBorderStyle = FormBorderStyle.None;
         }
         private void Close(object sender, EventArgs e)
@@ -43,19 +48,19 @@ namespace BootJect
             int nRightRect,
             int nBottomRect,
             int nWidthEllipse,
-            int nHeightEllipse 
+            int nHeightEllipse
         );
 
-        private void LoadFuny(object sender, EventArgs e)
+        private void LoadFuny()
         {
             string[] names = new string[] { "Banned lol", "sad", "BootJect", "Almighty boot", "hmmm" };
             Random rnd = new Random();
             int index = rnd.Next(names.Length);
-            Console.WriteLine($"Name: {names[index]}");
+            funy.Text = names[index];
         }
         private void In(object sender, EventArgs e)
         {
-            
+
             try
             {
                 OpenFileDialog open = new OpenFileDialog();
@@ -73,7 +78,7 @@ namespace BootJect
                         Process[] proclist = Process.GetProcesses();
                         foreach (Process pr in proclist)
                         {
-                            
+
                             if (pr.ProcessName.StartsWith(procname.Text.ToLower()))
                             {
                                 // Code for converting string to lowercase above (^)
@@ -117,7 +122,7 @@ namespace BootJect
                                 // Code for converting first letter to uppercase above (^)
                                 string procpath = pr.MainModule.FileName;
                                 VibeCheck(fullPath);
-                                procpt.Text = "[I] Injecting to:" +procpath;
+                                procpt.Text = "[I] Injecting to:" + procpath;
                                 Injector inj = new Injector(pr);
                                 inj.Inject(fullPath);
                                 inj.Dispose();
@@ -135,9 +140,9 @@ namespace BootJect
                             string batchCommands = string.Empty;
                             string exeFileName = Assembly.GetExecutingAssembly().CodeBase.Replace("file:///", string.Empty).Replace("/", "\\");
                             Console.WriteLine("[I] NoTrace on, this will delete the program. Goodbye!");
-                            batchCommands += "@ECHO OFF\n";                         
-                            batchCommands += "ping 127.0.0.1 > nul -n 3\n";           
-                            batchCommands += "echo j | del /F ";                    
+                            batchCommands += "@ECHO OFF\n";
+                            batchCommands += "ping 127.0.0.1 > nul -n 3\n";
+                            batchCommands += "echo j | del /F ";
                             batchCommands += exeFileName + "\n";
                             batchCommands += "echo j | del ad.bat";
                             File.WriteAllText("ad.bat", batchCommands);
@@ -171,6 +176,7 @@ namespace BootJect
         private void main_Load(object sender, EventArgs e)
         {
             Console.WriteLine("[I] Main loaded");
+            LoadFuny();
         }
         private void VibeCheck(string path)
         {
@@ -183,7 +189,7 @@ namespace BootJect
             {
                 f.SetAccessControl(fileSecurity);
                 Console.WriteLine("[I] Vibe completed. UWP apps are compatible with the DLL: " + path);
-                
+
             }
             catch (Exception er)
             {
@@ -216,7 +222,7 @@ namespace BootJect
             mouseDown = false;
         }
 
-        private const int CS_DROPSHADOW = 0x20000;
+        private const int CS_DROPSHADOW = 0x00020000;
         protected override CreateParams CreateParams
         {
             get
