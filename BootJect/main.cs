@@ -27,6 +27,7 @@ namespace BootJect
         public int posx;
         public int posy;
         public int border = 50;
+        public int ismin;
         public main()
         {
             SetStyle(ControlStyles.UserPaint, true);
@@ -42,7 +43,7 @@ namespace BootJect
         }
         private void Min(object sender, EventArgs e)
         {
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
         }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
@@ -249,6 +250,28 @@ namespace BootJect
             }
         }
 
+
+        private void Main_MinAnim(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                sizex -= 33;
+                sizey -= 20;
+                posy -= 40;
+                posx += 12;
+                border += 1;
+                this.Opacity -= 0.050;
+                this.Width = sizex;
+                this.Height = sizey;
+                Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, border, border));
+                this.Update();
+            }
+            else
+            {
+                this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            }
+        }
+
         public void Main_CloseAnim(object sender, EventArgs e)
         {
             if (this.Opacity > 0.0)
@@ -262,7 +285,6 @@ namespace BootJect
                 this.Width = sizex;
                 this.Height = sizey;
                 Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, border, border));
-                this.Location = new Point(posx, this.Location.Y);
                 this.Update();
             }
             else
