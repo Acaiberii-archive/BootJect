@@ -44,7 +44,9 @@ namespace BootJect
             this.funy = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.injected = new System.Windows.Forms.PictureBox();
             this.menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.injected)).BeginInit();
             this.SuspendLayout();
             // 
             // x
@@ -97,9 +99,9 @@ namespace BootJect
             this.procpt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.procpt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.procpt.ForeColor = System.Drawing.SystemColors.Window;
-            this.procpt.Location = new System.Drawing.Point(19, 133);
+            this.procpt.Location = new System.Drawing.Point(12, 143);
             this.procpt.Name = "procpt";
-            this.procpt.Size = new System.Drawing.Size(624, 126);
+            this.procpt.Size = new System.Drawing.Size(539, 126);
             this.procpt.TabIndex = 8;
             this.procpt.Text = "";
             // 
@@ -166,6 +168,15 @@ namespace BootJect
             this.timer2.Interval = 1;
             this.timer2.Tick += new System.EventHandler(this.Main_OpenAnim);
             // 
+            // injected
+            // 
+            this.injected.InitialImage = ((System.Drawing.Image)(resources.GetObject("injected.InitialImage")));
+            this.injected.Location = new System.Drawing.Point(235, 33);
+            this.injected.Name = "injected";
+            this.injected.Size = new System.Drawing.Size(33, 30);
+            this.injected.TabIndex = 12;
+            this.injected.TabStop = false;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +184,7 @@ namespace BootJect
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(655, 271);
             this.ContextMenuStrip = this.menu;
+            this.Controls.Add(this.injected);
             this.Controls.Add(this.min);
             this.Controls.Add(this.procname);
             this.Controls.Add(this.x);
@@ -194,6 +206,7 @@ namespace BootJect
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.main_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.main_MouseUp);
             this.menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.injected)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,6 +226,7 @@ namespace BootJect
         private System.Windows.Forms.Label funy;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.PictureBox injected;
     }
 }
 

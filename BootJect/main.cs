@@ -95,7 +95,7 @@ namespace BootJect
                                 inj.Inject(fullPath);
                                 inj.Dispose();
                                 MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                load.Text = "Injected.";
+                                injected.Show();
                             }
                             else if (pr.ProcessName.StartsWith(procname.Text.ToUpper()))
                             {
@@ -108,7 +108,7 @@ namespace BootJect
                                 inj.Dispose();
                                 Console.WriteLine("[I] Process found, DLL injected.");
                                 MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                load.Text = "Injected.";
+                                injected.Show();
                             }
                             else if (pr.ProcessName.StartsWith(procname.Text))
                             {
@@ -121,7 +121,7 @@ namespace BootJect
                                 inj.Dispose();
                                 Console.WriteLine("[I] Process found, DLL injected.");
                                 MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                load.Text = "Injected.";
+                                injected.Show();
                             }
                             else if (pr.ProcessName.StartsWith(procname.Text.First().ToString().ToUpper() + procname.Text.Substring(1)))
                             {
@@ -134,7 +134,7 @@ namespace BootJect
                                 inj.Dispose();
                                 Console.WriteLine("[I] Process found, DLL injected.");
                                 MessageBox.Show("DLL has been injected successfully and was detached from the process.", "DLL Injected.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                load.Text = "Injected.";
+                                injected.Show();
                             }
                             else
                             {
@@ -192,6 +192,7 @@ namespace BootJect
             sizex = this.Width;
             sizey = this.Height;
             posx = this.Left;
+            injected.Hide();
         }
         private void VibeCheck(string path)
         {
