@@ -20,5 +20,6 @@
 <h1></h1>
 
 <div align="center"><img src="submit-requests-pls.png"></div>
+&nbsp;
 <pre><div align="center"><h3>Please submit a pull request if you want to fix an error or something wrong :)</h3></div></pre>
 
