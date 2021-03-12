@@ -1,5 +1,5 @@
 <div align="center"><img src="logo.png"></div>
-<div align="center"><h2>The almighty BootJector</h2></div>
+<div align="center"><h2>The almighty BootJector [INACTIVE]</h2></div>
 &nbsp;
 &nbsp;
 &nbsp;
